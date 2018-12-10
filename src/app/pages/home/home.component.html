@@ -1,0 +1,27 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" opened mode="side" >
+    <mat-expansion-panel style="box-shadow:0px 0px 0px #fff">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Articulos
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list role="list">
+        <mat-list-item role="listitem">Listado</mat-list-item>
+        <mat-list-item role="listitem">Categorias</mat-list-item>
+        <mat-list-item role="listitem">Sin Stock</mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar color="primary" class="mat-elevation-z4">
+      <button type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Nippon</span>
+    </mat-toolbar>
+  </div>
+
+</mat-drawer-container>
