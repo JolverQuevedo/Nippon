@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ArticulosListComponent } from './components/articulos-list/articulos-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -13,10 +14,15 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [LoginGuard]
   },
+
   {
     path: 'articulos',
     component: ArticulosComponent,
-    canActivate: [LoginGuard]
+    canActivate: [LoginGuard],
+    children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
+      { path: 'list', component: ArticulosListComponent }
+    ]
   }
 ];
 

@@ -14,6 +14,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
   onSubmit() {
     localStorage.setItem('usuario', JSON.stringify(this.login));
-    this.router.navigate(['articulos']);
+    this.router.navigate(['home']);
   }
 }

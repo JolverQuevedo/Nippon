@@ -14,10 +14,10 @@ export class LoginGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem('usuario') !== null) {
-      this.snackBar.open('Bienvenido');
+      this.snackBar.open('Bienvenido', null, { duration: 2500 });
       return true;
     }
-    this.snackBar.open('Necesitas loguearte para ingresar');
+    this.snackBar.open('Necesitas loguearte para ingresar',null, { duration: 2500 });
     this.router.navigate(['/']);
     return false;
   }
